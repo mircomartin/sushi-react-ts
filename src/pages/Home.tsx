@@ -1,13 +1,14 @@
-import { Slider } from '../components/home/Slider'
-import { MediaText } from '../components/home/MediaText'
-import { Banner } from '../components/home/Banner'
+import { MediaText, Slider, Testimonials, Map } from '../components/home'
+import { Promos } from '../components/sections'
 
 export const Home = () => {
   return (
     <>
       <Slider />
       <MediaText />
-      <Banner />
+      <Promos />
+      <Map />
+      <Testimonials />
     </>
   )
 }

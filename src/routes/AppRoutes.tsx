@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../components/ui/Header'
+import { Footer } from '../components/ui/Footer'
 import { Home } from '../pages/Home'
 
 export const AppRoutes = () => {
@@ -8,7 +9,10 @@ export const AppRoutes = () => {
       <Header />
       <Routes>
         <Route index path="/" element={<Home />} />
+
+        <Route path="/*" element={<Navigate to='/' />} />
       </Routes>
+      <Footer />
     </>
   )
 }

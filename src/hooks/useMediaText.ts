@@ -1,44 +1,38 @@
-import { useCallback, useEffect, useState } from 'react';
-import { IMediaText } from "../interfaces/interfaces";
-import { getMediaWithTextFromApi } from "../services/media-text";
+import { useCallback, useEffect, useState } from 'react'
+import { getMediaWithTextFromApi } from '../services/media-text'
+import { type IMediaText } from '../interfaces/interfaces'
 
 export const useMediaText = () => {
+  const [mediaText, setMediaText] = useState<IMediaText | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
 
-	const [mediaText, setMediaText] = useState<IMediaText>()
-	const [error, setError] = useState<string | null>(null)
-	const [loading, setLoading] = useState(false)
-
-	const getMediaWithText = useCallback( async () => {
-
+  const getMediaWithText = useCallback(async () => {
+    setLoading(true)
     try {
-      setLoading(true)    
-      const { data } = await getMediaWithTextFromApi();
-			const textMediaTyped = {
-				id: data.id,
-				title: data.attributes.title,
-				description: data.attributes.description,
-				srcImg: data.attributes.image.data.attributes.url,
-				videoId: data.attributes.videoId,
-			}
+      const { data } = await getMediaWithTextFromApi()
+      const textMediaTyped = {
+        id: data.id,
+        title: data.attributes.title,
+        description: data.attributes.description,
+        srcImg: data.attributes.image.data.attributes.url,
+        videoId: data.attributes.videoId
+      }
       setMediaText(textMediaTyped)
-
-    } catch ( error: any ) {
-      setError( error.message )
+    } catch (error: any) {
+      setError(error.message)
     } finally {
-      setLoading(false)      
+      setLoading(false)
     }
+  }, [])
 
-  },[])
-	
-	useEffect(() => {
+  useEffect(() => {
+    getMediaWithText()
+  }, [getMediaWithText])
 
-		getMediaWithText()
-		
-	}, [getMediaWithText])
-
-	return {
-		mediaText,
-		error,
-		loading
-	}
+  return {
+    mediaText,
+    error,
+    loading
+  }
 }

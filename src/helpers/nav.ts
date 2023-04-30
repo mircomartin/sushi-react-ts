@@ -1,46 +1,40 @@
-import { INav } from "../interfaces/interfaces";
+import { type INav } from '../interfaces/interfaces'
 
 export const nav: INav[] = [
-	{
-		"id": 0,
-		"url": '',
-		"text": 'Proyecto'
-	},
-	{
-		"id": 1,
-		"url": '',
-		"text": 'Masterplan'
-	},
-	{
-		"id": 2,
-		"url": '',
-		"text": 'Servicios'
-	},
-	{
-		"id": 3,
-		"url": '',
-		"text": 'Infraestructura'
-	},
-	{
-		"id": 4,
-		"url": '',
-		"text": 'Disponibilidad',
-		"submenu": [
-			{
-				"id": 1,
-				"url": '',
-				"text": 'Etapa 1'
-			},
-			{
-				"id": 2,
-				"url": '',
-				"text": 'Etapa 2'
-			}
-		]
-	},
-	{
-		"id": 5,
-		"url": '',
-		"text": 'Experiencia 360'
-	}
+  {
+    id: 0,
+    text: 'Home',
+    url: '/'
+  },
+  {
+    id: 1,
+    text: 'MENÚ',
+    submenu: [
+      {
+        id: 1,
+        text: 'Carta de Sushi',
+        url: 'menu/sushi'
+      },
+      {
+        id: 2,
+        text: 'Carta de Vinos',
+        url: 'menu/vinos'
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: 'Sobre Nosotros',
+    url: '/sobre-nosotros'
+  },
+  {
+    id: 3,
+    text: 'PROMOS',
+    url: '#promos'
+  },
+  {
+    id: 4,
+    text: 'CONTACTO',
+    url: '/contacto'
+  }
 ]
