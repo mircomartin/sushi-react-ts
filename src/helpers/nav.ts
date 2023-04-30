@@ -3,7 +3,7 @@ import { type INav } from '../interfaces/interfaces'
 export const nav: INav[] = [
   {
     id: 0,
-    text: 'Home',
+    text: 'Inicio',
     url: '/'
   },
   {

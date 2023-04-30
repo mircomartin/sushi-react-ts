@@ -10,7 +10,7 @@ export const MediaText = () => {
   if (!loading && error !== null) return <p className='text-center text-white bg-red-400 rounded-md'>{error}</p>
 
   return (
-    <div className='container w-full px-5 md:px-16 md:max-w-screen-xl mb-12 md:mb-36'>
+    <div className='container w-full px-5 md:px-0 mb-12 md:mb-36'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         <div className='order-2 md:order-1'>
           <AnimationOnScroll animateIn='animate__fadeInLeft' animateOnce={true} animatePreScroll={false}>

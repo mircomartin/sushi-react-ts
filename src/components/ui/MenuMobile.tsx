@@ -25,7 +25,7 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
       <ul className="flex flex-col gap-5">
         {
           nav.map((item) => 
-            (item.submenu !== undefined)
+            item.submenu !== undefined
               ? 
                 <li key={item.id} className="flex flex-col gap-2 font-medium" onClick={() => setToggleSubMenu(!toggleSubMenu)}>
                   <button className="flex items-center gap-2 uppercase">

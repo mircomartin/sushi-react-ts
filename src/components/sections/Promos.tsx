@@ -15,8 +15,8 @@ export const Promos = () => {
       }}
     >
       <div className='container px-5 md:px-0'>
-        <div className='mb-5'>
-          <h2 className='text-[#d21c0c] text-4xl font-bold uppercase text-center'>Promos</h2>
+        <div className='mb-8'>
+          <h2 className='text-[#d21c0c] text-4xl font-bold uppercase text-center'>Encontrá nuestros menús destacados</h2>
         </div>
         <div className='w-full flex overflow-x-auto flex-nowrap md:grid md:grid-cols-3 gap-7 md:gap-12'>
         {

@@ -28,6 +28,7 @@ module.exports = {
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/restrict-template-expressions': 'off',
     'operator-linebreak': 'off',
-    '@typescript-eslint/no-floating-promises': 'off'
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-misused-promises': 'off'
   }
 }

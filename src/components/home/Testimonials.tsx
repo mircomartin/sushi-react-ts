@@ -12,7 +12,7 @@ export const Testimonials = () => {
   if (!loading && error !== null) return <p className="text-center text-white bg-red-400 rounded-md">{error}</p>
   
   return (
-    <div className="bg-slate-950 pt-10 md:pt-16">
+    <div className="bg-slate-950 pu-12 md:py-36">
       <div className="container px-5 md:px-0">
         <Swiper
           breakpoints={{
