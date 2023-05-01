@@ -1,4 +1,3 @@
-export * from './Banner'
 export * from './Map'
 export * from './MediaText'
 export * from './Slider'
