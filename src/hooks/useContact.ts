@@ -6,6 +6,7 @@ export const useContact = () => {
     mensaje: ''
   })
   const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState<boolean>(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormContact({
@@ -27,15 +28,29 @@ export const useContact = () => {
     }
 
     try {
-      const res = await fetch('url', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/contacts`, {
         method: 'POST',
-        body: JSON.stringify({ formContact }),
+        body: JSON.stringify({
+          data: {
+            nombre: formContact.nombre,
+            mensaje: formContact.mensaje
+          }
+        }),
         headers: {
           'Content-Type': 'application/json'
         }
       })
-      const data = await res.json()
-      console.log('Datos de la respuesta:', data)
+      if (!res.ok) {
+        throw new Error('Error al enviar los datos')
+      } else {
+        setSuccess(true)
+        const data = await res.json()
+        console.log('Datos de la respuesta:', data)
+        setFormContact({
+          nombre: '',
+          mensaje: ''
+        })
+      }
     } catch (error) {
       console.error('Error al enviar los datos:', error)
     }
@@ -45,6 +60,7 @@ export const useContact = () => {
     handleInputChange,
     handleSubmit,
     formContact,
-    error
+    error,
+    success
   }
 }
