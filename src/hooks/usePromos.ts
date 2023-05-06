@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { getPromosFromApi } from '../services/promos'
-import { type IPromo } from '../interfaces/interfaces'
-import { type PromoAPI } from '../interfaces/types'
+import { type ICard } from '../interfaces/interfaces'
+import { type WP_MenuDestacados } from '../interfaces/types'
 
 export const usePromos = () => {
-  const [promos, setPromos] = useState<PromoAPI[] | []>([])
+  const [promos, setPromos] = useState<WP_MenuDestacados[] | []>([])
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -24,14 +24,14 @@ export const usePromos = () => {
     getPromos()
   }, [getPromos])
 
-  const promosMapped: IPromo[] = useMemo(
+  const promosMapped: ICard[] = useMemo(
     () => promos?.map((card) => {
       return {
         id: card.id,
-        title: card.attributes.title,
-        description: card.attributes.description,
-        price: card.attributes.price,
-        image: card.attributes.image.data.attributes.url
+        title: card.acf.title,
+        description: card.acf.description,
+        price: card.acf.price,
+        image: card.acf.image
       }
     }), [promos]
   )

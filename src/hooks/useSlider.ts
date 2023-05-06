@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { getImagesSliderFromApi } from '../services/slider'
 import { type ISlide } from '../interfaces/interfaces'
-import { type SlideAPI } from '../interfaces/types'
+import { type WP_Slider } from '../interfaces/types'
 
 export const useSlider = () => {
-  const [sliders, setSliders] = useState<SlideAPI[] | []>([])
+  const [sliders, setSliders] = useState<WP_Slider[] | []>([])
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -23,18 +23,16 @@ export const useSlider = () => {
   useEffect(() => {
     getSlider()
   }, [getSlider])
-
-  const slidersMapped: ISlide[] = useMemo(
-    () => sliders?.map((slide) => {
-      return {
-        id: slide.id,
-        title: slide.attributes.title,
-        textButton: slide.attributes.textButton,
-        urlSlide: slide.attributes.urlSlide,
-        srcImg: slide.attributes.imageSlide.data.attributes.url
-      }
-    }), [sliders]
-  )
+  
+  const slidersMapped: ISlide[] = useMemo(() => sliders?.map((slide) => {
+    return {
+      id: slide.id,
+      title: slide.acf.title,
+      textButton: slide.acf.textButton,
+      urlSlide: slide.acf.urlSlide,
+      srcImg: slide.acf.image
+    }
+  }), [sliders])
 
   return {
     sliders: slidersMapped,

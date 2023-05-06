@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { getTestimonialsFromApi } from '../services/testimonials'
 import { type ITestimonial } from '../interfaces/interfaces'
-import { type TestimonialsAPI } from '../interfaces/types'
+import { type WP_Testimonial } from '../interfaces/types'
 
 export const useTestimonials = () => {
-  const [testimonials, setTestimonials] = useState<TestimonialsAPI[] | []>([])
+  const [testimonials, setTestimonials] = useState<WP_Testimonial[] | []>([])
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   
@@ -27,8 +27,8 @@ export const useTestimonials = () => {
   const testimonialsMapped: ITestimonial[] = useMemo(() => {
     return testimonials.map((testimonial) => ({
       id: testimonial.id,
-      author: testimonial.attributes.author,
-      comment: testimonial.attributes.comment
+      author: testimonial.acf.author,
+      comment: testimonial.acf.comment
     }))
   }, [testimonials])
   

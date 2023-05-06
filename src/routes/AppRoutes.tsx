@@ -4,18 +4,18 @@ import { Footer } from '../components/ui/Footer'
 import { Home } from '../pages/Home'
 import { Contact } from '../pages/Contact'
 import { SobreNosotros } from '../pages/SobreNosotros'
-import { Wines } from '../pages/Wines'
+import { MenuSushi } from '../pages/MenuSushi'
 
 export const AppRoutes = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className=''>
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contact />} />
-          <Route path="/menu/vinos" element={<Wines />} />
+          <Route path="/menu/sushi" element={<MenuSushi />} />
 
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>

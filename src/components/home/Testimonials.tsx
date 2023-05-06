@@ -1,5 +1,5 @@
 import { Navigation } from 'swiper'
-import ReactMarkdown from 'react-markdown'
+import ReactHtmlParser from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useTestimonials } from '../../hooks/useTestimonials'
 import { Loading } from '../ui/Loading'
@@ -12,7 +12,7 @@ export const Testimonials = () => {
   if (!loading && error !== null) return <p className="text-center text-white bg-red-400 rounded-md">{error}</p>
   
   return (
-    <div className="bg-slate-950 pu-12 md:py-36">
+    <div className="bg-slate-950 py-12 md:py-36">
       <div className="container px-5 md:px-0">
         <Swiper
           breakpoints={{
@@ -45,7 +45,7 @@ export const Testimonials = () => {
               <SwiperSlide key={slide.id}>
                 <div className="flex flex-col gap-5 justify-between bg-white p-10 rounded-lg">
                   <div className="min-h-[250px]">
-                    <ReactMarkdown>{slide.comment}</ReactMarkdown>
+                    {ReactHtmlParser(slide.comment)}
                   </div>
                   <div>
                     <span className="font-bold uppercase">{slide.author}</span>

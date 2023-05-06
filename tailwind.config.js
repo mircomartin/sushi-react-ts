@@ -3,6 +3,9 @@ export default {
   theme: {
     container: {
       center: true
+    },
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif']
     }
   },
   extend: {},

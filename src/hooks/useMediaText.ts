@@ -10,13 +10,13 @@ export const useMediaText = () => {
   const getMediaWithText = useCallback(async () => {
     setLoading(true)
     try {
-      const { data } = await getMediaWithTextFromApi()
+      const data = await getMediaWithTextFromApi()
       const textMediaTyped = {
         id: data.id,
-        title: data.attributes.title,
-        description: data.attributes.description,
-        srcImg: data.attributes.image.data.attributes.url,
-        videoId: data.attributes.videoId
+        title: data.acf.title,
+        description: data.acf.description,
+        srcImg: data.acf.image,
+        videoId: data.acf.videoId
       }
       setMediaText(textMediaTyped)
     } catch (error: any) {

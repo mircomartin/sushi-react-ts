@@ -1,5 +1,5 @@
-import { Navigation, Pagination, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, EffectFade } from 'swiper'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -19,7 +19,7 @@ export const Slider = () => {
  
   return (
     <Swiper
-      className='mb-12 md:mb-36'
+      className='mb-12 md:mb-36 min-h-screen md:min-h-[720px]'
       modules={[Navigation, Pagination, EffectFade]}
       slidesPerView={1}
       effect={'fade'}
@@ -36,15 +36,17 @@ export const Slider = () => {
               {
                 slide.textButton !== null
                 && 
-                  <div className='absolute flex items-center justify-center flex-col top-[50%] translate-y-[-50%] w-full gap-5'>
-                    <p className='text-3xl text-white w-1/2 text-center'>{slide.title}</p>
-                    {
-                      slide.urlSlide !== null
-                      && 
-                        <a href={slide.urlSlide} className='border-2 border-white p-3 text-white hover:bg-white hover:text-black transition-all delay-75'>
-                          {slide.textButton}
-                        </a>
-                    }
+                  <div className='absolute top-[50%] flex justify-center translate-y-[-50%] w-full'>
+                    <div className='bg-black/75 w-full md:w-1/2 gap-5 flex justify-center items-center flex-col min-h-[250px]'>
+                      <p className='text-2xl md:text-5xl text-white text-center font-bold uppercase'>{slide.title}</p>
+                      {
+                        slide.urlSlide !== ''
+                        && 
+                          <a href={slide.urlSlide} className='border-2 border-white p-3 text-white hover:bg-white hover:text-black transition-all delay-75'>
+                            {slide.textButton}
+                          </a>
+                      }
+                    </div>
                   </div>
               }
             </div>

@@ -9,6 +9,7 @@ export const nav: INav[] = [
   {
     id: 1,
     text: 'MENÚ',
+    url: null,
     submenu: [
       {
         id: 1,

@@ -116,3 +116,174 @@ export interface TestimonialsAPI {
     publishedAt: string
   }
 }
+
+export interface WP_Slider {
+  id: number
+  date: string
+  date_gmt: string
+  guid: {
+    rendered: string
+  }
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: string
+  type: string
+  link: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  featured_media: number
+  template: string
+  acf: {
+    image: string
+    title: string
+    textButton: string
+    urlSlide: string
+  }
+  yoast_head: string
+}
+
+export interface WP_MenuDestacados {
+  id: number
+  date: string
+  date_gmt: string
+  guid: {
+    rendered: string
+  }
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: string
+  type: string
+  link: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  featured_media: number
+  template: string
+  acf: {
+    title: string
+    description: string
+    price: string
+    image: string
+  }
+  yoast_head: string
+}
+
+export interface WP_Testimonial {
+  id: number
+  date: string
+  date_gmt: string
+  guid: {
+    rendered: string
+  }
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: string
+  type: string
+  link: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  featured_media: number
+  template: string
+  acf: {
+    author: string
+    comment: string
+  }
+  yoast_head: string
+}
+
+export interface WP_Page {
+  id: number
+  date: string
+  date_gmt: string
+  guid: {
+    rendered: string
+  }
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: string
+  type: string
+  link: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  excerpt: {
+    rendered: string
+    protected: boolean
+  }
+  author: number
+  featured_media: number
+  parent: number
+  menu_order: number
+  comment_status: string
+  ping_status: string
+  template: string
+  meta: any[]
+  acf: {
+    imagen_destacada: string
+    sub_titulo: string
+  }
+}
+
+export interface WP_Post {
+  id: number
+  date: string
+  date_gmt: string
+  guid: {
+    rendered: string
+  }
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: 'publish'
+  type: 'post'
+  link: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  excerpt: {
+    rendered: string
+    protected: boolean
+  }
+  author: number
+  featured_media: number
+  comment_status: 'open' | 'closed'
+  ping_status: 'open' | 'closed'
+  sticky: boolean
+  template: string
+  format: 'standard'
+  meta: any[] // Puedes definir un tipo más preciso si se conoce la estructura del objeto
+  categories: number[]
+  tags: any[] // Puedes definir un tipo más preciso si se conoce la estructura del objeto
+  acf: {
+    title: string
+    description: string
+    price: string
+    image: string
+  }
+}

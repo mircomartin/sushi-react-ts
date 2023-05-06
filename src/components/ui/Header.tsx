@@ -13,7 +13,7 @@ export const Header = () => {
   const { header } = useStickyHeader()
   
   return (
-    <header className="bg-slate-950 p-2 animated" ref={header}>
+    <header className="bg-slate-950 px-2 py-5 animated" ref={header}>
       <MenuMobile openMenu={openMenu} setOpenMenu={setOpenMenu} />
 
       <div className="container flex items-center justify-between">
@@ -43,7 +43,7 @@ export const Header = () => {
                         ))}
                       </ul>
                     </>
-                  : link.url !== undefined && <NavLink className="tracking-wider" to={link.url}>{link.text}</NavLink>
+                  : link.url !== null && <NavLink className="tracking-wider" to={link.url}>{link.text}</NavLink>
               }
             </div>
           ))
@@ -53,14 +53,14 @@ export const Header = () => {
           <button className="flex justify-end md:hidden" onClick={() => setOpenMenu(!openMenu)}>
             {!openMenu ? <HamburgerIcon /> : <CloseMobile />}
           </button>
-          <div className="hidden md:flex gap-4 justify-end">
+          <section className="hidden md:flex gap-4 justify-end">
             <a href='https://www.instagram.com/madame.butterfly.sushi/' className='transition-all duration-500 hover:scale-125'>
               <img src={INSTAGRAM} alt="Instagram" />
             </a>
             <a href='https://www.facebook.com/MadameButterflySushiBar/' className='transition-all duration-500 hover:scale-125'>
               <img src={FACEBOOK} alt="Facebook" />
             </a>
-          </div>
+          </section>
         </div>
       </div>
     </header>

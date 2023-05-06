@@ -1,8 +1,8 @@
 export interface INav {
   id: number
-  url?: string
+  url: string | null
   text: string
-  submenu?: Submenu[] | []
+  submenu?: Submenu[]
 }
 
 interface Submenu {
@@ -13,9 +13,9 @@ interface Submenu {
 
 export interface ISlide {
   id: number 
-  title: string | null 
-  textButton: string | null 
-  urlSlide: string | null 
+  title: string 
+  textButton: string 
+  urlSlide: string 
   srcImg: string
 }
 
@@ -24,7 +24,7 @@ export interface IMediaText {
   title: string
   description: string
   srcImg: string
-  videoId?: string
+  videoId: string
 }
 
 export interface ITestimonial {
@@ -33,10 +33,18 @@ export interface ITestimonial {
   comment: string
 }
 
-export interface IPromo {
+export interface ICard {
   id: number
   title: string
   description: string
-  price: string | null
+  price: string
   image: string
+}
+
+export interface IStaticPage {
+  id: number | string
+  title: string
+  description: string
+  image: string
+  subtitle: string
 }

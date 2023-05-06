@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export const useContact = () => {
   const [formContact, setFormContact] = useState({
+    email: '',
     nombre: '',
+    asunto: 'Consulta desde la web',
     mensaje: ''
   })
+  const form = useRef<HTMLFormElement>(null)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<boolean>(false)
 
@@ -18,8 +21,16 @@ export const useContact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    if (formContact.email.trim().length <= 2) {
+      setError('El email es obligatorio')
+      return
+    }
     if (formContact.nombre.trim().length <= 2) {
       setError('El nombre es obligatorio')
+      return
+    }
+    if (formContact.asunto.trim().length <= 2) {
+      setError('El asunto es obligatorio')
       return
     }
     if (formContact.mensaje.trim().length <= 2) {
@@ -28,17 +39,13 @@ export const useContact = () => {
     }
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/contacts`, {
+      if (form.current === null) return
+
+      const data = new FormData(form.current)
+
+      const res = await fetch('https://madame-butterfly-sushi.000webhostapp.com/wp-json/contact-form-7/v1/contact-forms/5/feedback', {
         method: 'POST',
-        body: JSON.stringify({
-          data: {
-            nombre: formContact.nombre,
-            mensaje: formContact.mensaje
-          }
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        body: data
       })
       if (!res.ok) {
         throw new Error('Error al enviar los datos')
@@ -47,7 +54,9 @@ export const useContact = () => {
         const data = await res.json()
         console.log('Datos de la respuesta:', data)
         setFormContact({
+          email: '',
           nombre: '',
+          asunto: 'Consulta desde la web',
           mensaje: ''
         })
       }
@@ -61,6 +70,7 @@ export const useContact = () => {
     handleSubmit,
     formContact,
     error,
-    success
+    success,
+    form
   }
 }
