@@ -14,12 +14,12 @@ export const nav: INav[] = [
       {
         id: 1,
         text: 'Carta de Sushi',
-        url: 'menu/sushi'
+        url: '/menu/sushi'
       },
       {
         id: 2,
         text: 'Carta de Vinos',
-        url: 'menu/vinos'
+        url: '/menu/vinos'
       }
     ]
   },

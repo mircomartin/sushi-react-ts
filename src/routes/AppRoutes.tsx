@@ -5,6 +5,7 @@ import { Home } from '../pages/Home'
 import { Contact } from '../pages/Contact'
 import { SobreNosotros } from '../pages/SobreNosotros'
 import { MenuSushi } from '../pages/MenuSushi'
+import { MenuVinos } from '../pages/MenuVinos'
 
 export const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/menu/sushi" element={<MenuSushi />} />
+          <Route path="/menu/vinos" element={<MenuVinos />} />
 
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>

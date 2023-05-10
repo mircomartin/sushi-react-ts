@@ -38,6 +38,10 @@ export const useSushiMenu = () => {
   }), [menus, currentPage])
   console.log(totalPages, menuMapped)
 
+  /* const sortedMenu = useMemo(() => {
+    return sortByTitle ? [...menuMapped]?.sort((a, b) => a.title - b.title) : menuMapped
+  }, [menuMapped, sortByTitle]) */
+
   return {
     menuMapped,
     error,

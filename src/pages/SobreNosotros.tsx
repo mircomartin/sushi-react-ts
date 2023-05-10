@@ -1,4 +1,5 @@
 import ReactHtmlParser from 'react-html-parser'
+import { Helmet } from 'react-helmet'
 import { useStaticPage } from '../hooks/useStaticPage'
 import { Promos, TitleSection } from '../components/sections'
 import { Loading } from '../components/ui/Loading'
@@ -14,18 +15,14 @@ export const SobreNosotros = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Sobre Nosotros | Madame Butterfly Sushi</title>
+        <meta name='description' content='En nuestro restaurante de sushi, nos apasiona ofrecer a nuestros clientes la mejor experiencia gastronómica japonesa. Desde nuestro equipo de chefs expertos hasta nuestro servicio amable y atento, nos esforzamos por crear un ambiente acogedor y auténtico para nuestros comensales. Utilizamos ingredientes frescos y de calidad para preparar nuestros platos de sushi clásicos y creativos, y siempre estamos innovando para ofrecer nuevas opciones a nuestros clientes. ¡Ven a visitarnos y descubre por qué somos el restaurante de sushi favorito de la ciudad!' />
+      </Helmet>
       <TitleSection title={pageSelected?.title}/>
       <div className='container px-5 md:px-0 py-12 md:py-36'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-28 items-center'>
           <div className='flex flex-col'>
-            {/* <h3 className='text-4xl text-[#d21c0c] font-bold uppercase mb-11'>Nuestra Historia</h3>
-            <div className='flex flex-col gap-5'>
-              <p>Sushi Madame Butterfly es un restaurante de comida japonesa ubicado en calle Mitre 1102, Rosario. Desde nuestra apertura en 2012, nos hemos enfocado en ofrecer a nuestros clientes la mejor experiencia culinaria con platillos auténticos y de alta calidad.</p>
-              <p>Nuestro equipo está conformado por expertos chefs japoneses y un amable personal de servicio, todos comprometidos en brindarte una experiencia única. Nos enorgullece ofrecer un menú variado que incluye sushi, sashimi, rollos y platillos tradicionales de la cocina japonesa. Además, nos aseguramos de utilizar ingredientes frescos y de alta calidad en todos nuestros platillos.</p>
-              <p>Nos esforzamos por crear un ambiente cálido y acogedor en nuestro restaurante, para que nuestros clientes puedan disfrutar de una experiencia única en cada visita. Nos complace recibir a clientes de todas partes y nos aseguramos de que se sientan como en casa en nuestro restaurante.</p>
-              <p>Estamos comprometidos en ofrecer una experiencia culinaria excepcional y esperamos poder atenderte pronto. ¡Te esperamos en <strong>Sushi Madame Butterfly</strong>!</p>
-            </div> */}
-
             <h3 className='text-4xl text-[#d21c0c] font-bold uppercase mb-11'>{ReactHtmlParser(pageSelected?.subtitle)}</h3>
             <div className='flex flex-col gap-5'>
               {ReactHtmlParser(pageSelected?.description)}
