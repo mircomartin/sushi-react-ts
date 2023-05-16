@@ -21,7 +21,7 @@ header.sticky-custom {
   width: 100%;
   left: 0;
   box-shadow: 0 0 7px #0003;
-  background: #0a061c8c;
+  background-color: #0a061c8c;
 }
 
 header.opened {

@@ -13,7 +13,8 @@ export const Header = () => {
   const { header } = useStickyHeader()
   
   return (
-    <header className={`bg-slate-950 px-1 py-2 md:px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'sticky-custom'}`} ref={header}>
+    <header className={`bg-slate-950 px-1 py-2 md:px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'bg-slate-950'}`} ref={header}>
+
       <MenuMobile openMenu={openMenu} setOpenMenu={setOpenMenu} />
 
       <div className='container flex items-center justify-between'>
@@ -63,6 +64,7 @@ export const Header = () => {
           </section>
         </div>
       </div>
+      
     </header>
   )
 }
