@@ -19,7 +19,7 @@ export const MediaText = () => {
               {
                 mediaText?.description !== undefined
                 &&
-                <div className='text-lg font-semibold flex flex-col gap-5'>{ReactHtmlParser(mediaText?.description)}</div>
+                <div className='text-lg flex flex-col gap-5'>{ReactHtmlParser(mediaText?.description)}</div>
               }
             </div>
           </AnimationOnScroll>

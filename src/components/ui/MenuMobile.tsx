@@ -30,7 +30,7 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
               : 
               item.url !== null 
               &&
-                <NavLink key={item.id} to={ item.url} className="font-medium uppercase" onClick={() => setOpenMenu(!openMenu)}>
+                <NavLink key={item.id} to={ item.url} className="font-semibold uppercase" onClick={() => setOpenMenu(!openMenu)}>
                   {item.text}
                 </NavLink>
           )

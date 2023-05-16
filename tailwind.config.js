@@ -5,7 +5,7 @@ export default {
       center: true
     },
     fontFamily: {
-      roboto: ['Roboto', 'sans-serif']
+      sans: ['Roboto', 'sans-serif']
     }
   },
   extend: {},

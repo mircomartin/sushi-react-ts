@@ -13,15 +13,15 @@ export const Header = () => {
   const { header } = useStickyHeader()
   
   return (
-    <header className={`bg-slate-950 px-1 py-2 md:px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'bg-slate-950'}`} ref={header}>
+    <header className={`bg-slate-950 py-2 px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'bg-slate-950'}`} ref={header}>
 
       <MenuMobile openMenu={openMenu} setOpenMenu={setOpenMenu} />
 
       <div className='container flex items-center justify-between'>
         <Link to='/' className='flex flex-1'>
           <figure className='flex gap-4 items-center'>
-            <img src={LOGO} alt='Logo' className='w-20 h-auto' />
-            <figcaption className='font-semibold text-lg text-white uppercase tracking-widest'>Madame Butterfly</figcaption>
+            <img src={LOGO} alt='Logo' className='w-12 md:w-20 h-auto' />
+            <figcaption className='text-lg text-white uppercase tracking-widest'>Madame Butterfly</figcaption>
           </figure>
         </Link>
         <nav className='hidden md:flex justify-center gap-10'>
