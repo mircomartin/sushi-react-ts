@@ -30,8 +30,30 @@ export const nav: INav[] = [
   },
   {
     id: 3,
-    text: 'PROMOS',
-    url: '#promos'
+    text: 'Cartas',
+    url: null,
+    submenu: [
+      {
+        id: 1,
+        text: 'Restaurant',
+        url: 'https://madame-butterfly-sushi.000webhostapp.com/wp-content/uploads/2023/05/menu-restaurant-b.pdf'
+      },
+      {
+        id: 2,
+        text: 'Take away',
+        url: 'https://madame-butterfly-sushi.000webhostapp.com/wp-content/uploads/2023/05/carta-vegan-take-away.pdf'
+      },
+      {
+        id: 3,
+        text: 'Vegan',
+        url: 'https://madame-butterfly-sushi.000webhostapp.com/wp-content/uploads/2023/05/carta-vegan-take-away.pdf'
+      },
+      {
+        id: 4,
+        text: 'Vinos',
+        url: 'https://madame-butterfly-sushi.000webhostapp.com/wp-content/uploads/2023/05/madame-vinos-sushin.pdf'
+      }
+    ]
   },
   {
     id: 4,

@@ -5,7 +5,7 @@ import FACEBOOK from './../../assets/facebook.svg'
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-950 px-2 py-10">
+    <footer className="bg-slate-950 px-1 py-5 md:px-2 md:py-10">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10">
           <Link to='/' className='flex'>

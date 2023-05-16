@@ -3,7 +3,7 @@ export const Loading = () => {
     <div className='min-h-screen flex justify-center items-center'>
       <button
         type='button'
-        className='inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-[#3fbabb] transition ease-in-out duration-150 cursor-not-allowed'
+        className='inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-[#d21c0c] transition ease-in-out duration-150 cursor-not-allowed'
         disabled
       >
         <svg className='animate-spin h-5 w-5 mr-3' viewBox='0 0 24 24'>

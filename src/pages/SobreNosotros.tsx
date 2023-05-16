@@ -23,7 +23,7 @@ export const SobreNosotros = () => {
       <div className='container px-5 md:px-0 py-12 md:py-36'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-28 items-center'>
           <div className='flex flex-col'>
-            <h3 className='text-4xl text-[#d21c0c] font-bold uppercase mb-11'>{ReactHtmlParser(pageSelected?.subtitle)}</h3>
+            <h3 className='text-3xl text-[#d21c0c] font-bold uppercase mb-11'>{ReactHtmlParser(pageSelected?.subtitle)}</h3>
             <div className='flex flex-col gap-5'>
               {ReactHtmlParser(pageSelected?.description)}
             </div>

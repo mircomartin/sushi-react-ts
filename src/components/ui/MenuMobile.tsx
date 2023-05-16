@@ -1,9 +1,8 @@
-import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { SubMenuMobile } from './SubMenuMobile'
 import { nav } from '../../helpers/nav'
-import { ArrowDown } from './icons'
 import INSTAGRAM from './../../assets/instagram.svg'
 import FACEBOOK from './../../assets/facebook.svg'
-import { NavLink } from 'react-router-dom'
 
 interface MenuMobileProps {
   openMenu: boolean
@@ -11,7 +10,6 @@ interface MenuMobileProps {
 }
 
 export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
-  const [toggleSubMenu, setToggleSubMenu] = useState(false)
 
   if (openMenu) {
     document.querySelector('body')?.classList.add('overflow-hidden')
@@ -28,19 +26,7 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
           nav.map((item) => 
             item.submenu !== undefined
               ? 
-              <li key={item.id} className="flex flex-col gap-2 font-medium" onClick={() => setToggleSubMenu(!toggleSubMenu)}>
-                <button className="flex items-center gap-2 uppercase">
-                  {item.text}
-                  <ArrowDown color={'black'} toggleSubMenu={toggleSubMenu} />
-                </button>
-                <ul className={`${toggleSubMenu ? 'opacity-1 h-[auto] visible' : 'opacity-0 h-0 invisible'} transition-all duration-500 pl-5 flex flex-col gap-2`}>
-                  {item.submenu?.map((subLink) => (
-                    <li key={subLink.id} onClick={() => setOpenMenu(!openMenu)}>
-                      <NavLink to={subLink.url}>{subLink.text}</NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <SubMenuMobile key={item.id} item={item} setOpenMenu={setOpenMenu} openMenu={openMenu} />
               : 
               item.url !== null 
               &&
