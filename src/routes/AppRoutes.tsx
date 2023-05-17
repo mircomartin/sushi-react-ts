@@ -11,7 +11,7 @@ export const AppRoutes = () => {
   return (
     <>
       <Header />
-      <main className=''>
+      <main>
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
@@ -19,7 +19,7 @@ export const AppRoutes = () => {
           <Route path="/menu/sushi" element={<MenuSushi />} />
           <Route path="/menu/vinos" element={<MenuVinos />} />
 
-          <Route path="/*" element={<Navigate to='/' />} />
+          <Route path="*" element={<Navigate to='/' />} />
         </Routes>
       </main>
       <Footer />
