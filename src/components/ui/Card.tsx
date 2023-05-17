@@ -11,7 +11,9 @@ export const Card = ({ product }: { product: ICard }) => {
     if (heightInfoCard.current !== null) {
       const height = heightInfoCard.current.clientHeight
       if (height > 100) {
-        document.querySelector('#buttonShow')?.classList.remove('hidden')
+        document.querySelectorAll('#buttonShow').forEach((button) => {
+          button.classList.remove('hidden')
+        })
       }
     }
   }, [])

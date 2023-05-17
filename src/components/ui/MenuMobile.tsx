@@ -19,7 +19,7 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
 
   return (
     <div
-      className={`${openMenu ? 'visible right-0 translate-x-0' : 'invisible translate-x-full'} transition-all duration-500 fixed w-full z-50 h-screen top-[70px] bg-white p-5 overflow-hidden md:hidden`}
+      className={`${openMenu ? 'visible right-0 translate-x-0' : 'invisible translate-x-full'} transition-all duration-500 fixed w-full z-50 h-screen top-[56px] bg-white p-5 overflow-hidden md:hidden`}
     >
       <ul className="flex flex-col gap-5">
         {

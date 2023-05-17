@@ -18,12 +18,14 @@ export const SubMenuMobile = ({ item, setOpenMenu, openMenu }: SubMenuMobileProp
         {item.text}
         <ArrowDown color={'black'} toggleSubMenu={toggleSubMenu} />
       </button>
-      <ul className={`${toggleSubMenu ? 'opacity-1 h-[auto] visible' : 'opacity-0 h-0 invisible'} transition-all duration-500 pl-5 flex flex-col gap-2`}>
-        {item.submenu?.map((subLink) => (
-          <li key={subLink.id} onClick={() => setOpenMenu(!openMenu)}>
-            <NavLink className='font-semibold' to={subLink.url}>{subLink.text}</NavLink>
-          </li>
-        ))}
+      <ul className={`${toggleSubMenu ? 'opacity-1 h-[auto] visible' : 'opacity-0 h-0 invisible'} transition-all duration-400 pl-5 flex flex-col gap-2`}>
+        {
+          item.submenu?.map((subLink) => (
+            <li key={subLink.id} onClick={() => setOpenMenu(!openMenu)}>
+              <NavLink className='font-semibold' to={subLink.url}>{subLink.text}</NavLink>
+            </li>
+          ))
+        }
       </ul>
     </li>
   )
