@@ -6,7 +6,7 @@ export const Promos = () => {
   const { error, loading, promos } = usePromos()
 
   if (loading) return <Loading />
-  if (!loading && error !== null) return <p className='text-center text-white bg-red-400 rounded-md'>{error}</p>
+  if (!loading && error !== null) return <p className='text-center text-white bg-red-400'>{error}</p>
 
   return (
     <div className='pb-12 md:pb-36 bg-slate-950' 
@@ -16,7 +16,7 @@ export const Promos = () => {
     >
       <div className='container px-5 md:px-0'>
         <div className='mb-10'>
-          <h2 className='text-[#d21c0c] text-3xl font-bold uppercase text-center'>Encontrá nuestros menús destacados</h2>
+          <h2 className='text-[#B6262F] text-3xl font-bold uppercase text-center'>Encontrá nuestros menús destacados</h2>
         </div>
         <div className='w-full flex overflow-x-auto flex-nowrap md:grid md:grid-cols-3 gap-7 md:gap-12'>
         {

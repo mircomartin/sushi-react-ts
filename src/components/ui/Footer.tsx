@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+import UseAnimations from 'react-useanimations'
+import instagram from 'react-useanimations/lib/instagram'
+import facebook from 'react-useanimations/lib/facebook'
 import LOGO from './../../assets/logo.png'
-import INSTAGRAM from './../../assets/instagram.svg'
-import FACEBOOK from './../../assets/facebook.svg'
 
 export const Footer = () => {
   return (
-    <footer className='bg-slate-950 py-5 px-2 md:py-10'>
+    <footer className='bg-[#080808] py-5 px-2 md:py-10'>
       <div className='container'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10'>
           <Link to='/' className='flex'>
@@ -14,14 +15,14 @@ export const Footer = () => {
             </figure>
           </Link>
           <div>
-            <p className='text-white text-center text-sm font-semibold'>© 2023 Madame Butterfly. Todos los derechos reservados. Desarrollado por <a href='https://www.linkedin.com/in/mirco-martin-a3b70670/'>Mirco Martin</a></p>
+            <p className='text-white text-center text-sm'>© 2023 Madame Butterfly. Todos los derechos reservados. Desarrollado por <a className='text-[#D13E2A] hover:underline' href='https://www.linkedin.com/in/mirco-mart%C3%ADn-a3b70670/'>Mirco Martin</a></p>
           </div>
           <div className='flex gap-4 justify-end'>
-            <a href='https://www.instagram.com/madame.butterfly.sushi/' className='transition-all duration-500 hover:scale-125'>
-              <img src={INSTAGRAM} alt='Instagram' />
+            <a href='https://www.instagram.com/madame.butterfly.sushi/'>
+              <UseAnimations animation={instagram} size={40} strokeColor='white' />
             </a>
-            <a href='https://www.facebook.com/MadameButterflySushiBar/' className='transition-all duration-500 hover:scale-125'>
-              <img src={FACEBOOK} alt='Facebook' />
+            <a href='https://www.facebook.com/MadameButterflySushiBar/'>
+              <UseAnimations animation={facebook} size={40} strokeColor='white' />
             </a>
           </div>
         </div>

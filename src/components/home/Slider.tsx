@@ -1,13 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, EffectFade } from 'swiper'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
-
 import { useSlider } from '../../hooks/useSlider'
 import { Loading } from '../ui/Loading'
 
@@ -15,7 +7,7 @@ export const Slider = () => {
   const { sliders, error, loading } = useSlider()
 
   if (loading) return <Loading />
-  if (!loading && error !== null) return <p className='text-center text-white bg-red-400 rounded-md'>{error}</p>
+  if (!loading && error !== null) return <p className='text-center text-white bg-red-400'>{error}</p>
  
   return (
     <Swiper

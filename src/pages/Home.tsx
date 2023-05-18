@@ -2,6 +2,12 @@ import { Helmet } from 'react-helmet'
 import { MediaText, Slider, Testimonials, Map } from '../components/home'
 import { Promos } from '../components/sections'
 
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
 export const Home = () => {
   return (
     <>

@@ -9,7 +9,7 @@ export const MenuSushi = () => {
   const { error, loading, menuMapped, currentPage, setCurrentPage, totalPages } = useSushiMenu()
 
   if (loading) return <Loading />
-  if (!loading && error !== null) return <p className='text-center text-white bg-red-400 rounded-md'>{error}</p>
+  if (!loading && error !== null) return <p className='text-center text-white bg-red-400'>{error}</p>
   if (!loading && error === null && menuMapped === undefined) return <p className='text-center text-4xl py-5 text-white bg-red-400 mt-[400px]'>No se encontró la página</p>
 
   return (

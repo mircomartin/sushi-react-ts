@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import UseAnimations from 'react-useanimations'
+import instagram from 'react-useanimations/lib/instagram'
+import facebook from 'react-useanimations/lib/facebook'
+import menu3 from 'react-useanimations/lib/menu3'
 import { useStickyHeader } from '../../hooks/useStickyHeader'
 import { MenuMobile } from './MenuMobile'
-import { ArrowDown, CloseMobile, HamburgerIcon } from './icons'
+import { ArrowDown } from './icons'
 import { nav } from '../../helpers/nav'
 import LOGO from './../../assets/logo.png'
-import INSTAGRAM from './../../assets/instagram.svg'
-import FACEBOOK from './../../assets/facebook.svg'
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const { header } = useStickyHeader()
-  
   return (
     <header className={`bg-slate-950 py-2 px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'bg-slate-950'}`} ref={header}>
 
@@ -32,11 +33,11 @@ export const Header = () => {
                 link.submenu !== undefined 
                   ? 
                     <>
-                      <button className='flex gap-2 items-center tracking-wider'>
+                      <button className='flex items-center tracking-wider'>
                         {link.text}
                         <ArrowDown />
                       </button>
-                      <ul className='mt-3'>
+                      <ul className='mt-3 submenu'>
                         {link.submenu?.map((link) => (
                           <li key={link.id}>
                             <NavLink to={link.url}>{link.text}</NavLink>
@@ -51,15 +52,15 @@ export const Header = () => {
         }
         </nav>
         <div className='md:flex-1'>
-          <button className='flex justify-end md:hidden' onClick={() => setOpenMenu(!openMenu)}>
-            {!openMenu ? <HamburgerIcon /> : <CloseMobile />}
+          <button className='flex justify-end md:hidden'>
+            <UseAnimations onClick={() => setOpenMenu(!openMenu)} animation={menu3} size={40} strokeColor='white' />
           </button>
           <section className='hidden md:flex gap-4 justify-end'>
-            <a href='https://www.instagram.com/madame.butterfly.sushi/' className='transition-all duration-500 hover:scale-125'>
-              <img src={INSTAGRAM} alt='Instagram' />
+            <a href='https://www.instagram.com/madame.butterfly.sushi/'>
+              <UseAnimations animation={instagram} size={40} strokeColor='white' />
             </a>
-            <a href='https://www.facebook.com/MadameButterflySushiBar/' className='transition-all duration-500 hover:scale-125'>
-              <img src={FACEBOOK} alt='Facebook' />
+            <a href='https://www.facebook.com/MadameButterflySushiBar/'>
+              <UseAnimations animation={facebook} size={40} strokeColor='white' />
             </a>
           </section>
         </div>

@@ -1,6 +1,6 @@
 import { Navigation } from 'swiper'
-import ReactHtmlParser from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import ReactHtmlParser from 'react-html-parser'
 import { useTestimonials } from '../../hooks/useTestimonials'
 import { Loading } from '../ui/Loading'
 import { Star } from '../ui/icons'
@@ -9,12 +9,13 @@ export const Testimonials = () => {
   const { error, loading, testimonials } = useTestimonials()
 
   if (loading) return <Loading />
-  if (!loading && error !== null) return <p className="text-center text-white bg-red-400 rounded-md">{error}</p>
+  if (!loading && error !== null) return <p className="text-center text-white bg-red-400">{error}</p>
   
   return (
-    <div className="bg-slate-950 py-12 md:py-36">
+    <div className="bg-slate-950 py-12 md:py-36 testimonials relative">
       <div className="container px-5 md:px-0">
         <Swiper
+          className='static'
           breakpoints={{
             640: {
               width: 640,
@@ -43,7 +44,7 @@ export const Testimonials = () => {
           {
             testimonials?.map((slide) => (
               <SwiperSlide key={slide.id}>
-                <div className="flex flex-col gap-5 justify-between bg-white p-10 rounded-lg">
+                <div className="testimomonialsItem flex flex-col gap-5 justify-between bg-white p-10">
                   <div className="min-h-[250px]">
                     {ReactHtmlParser(slide.comment)}
                   </div>

@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom'
+import UseAnimations from 'react-useanimations'
+import instagram from 'react-useanimations/lib/instagram'
+import facebook from 'react-useanimations/lib/facebook'
 import { SubMenuMobile } from './SubMenuMobile'
 import { nav } from '../../helpers/nav'
-import INSTAGRAM from './../../assets/instagram.svg'
-import FACEBOOK from './../../assets/facebook.svg'
 
 interface MenuMobileProps {
   openMenu: boolean
@@ -37,11 +38,11 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
         }
       </ul>
       <div className="flex gap-4 center mt-10">
-        <a href='https://www.instagram.com/madame.butterfly.sushi/' className='transition-all duration-500 hover:scale-125'>
-          <img src={INSTAGRAM} alt="Instagram" />
+        <a href='https://www.instagram.com/madame.butterfly.sushi/'>
+          <UseAnimations animation={instagram} size={40} />
         </a>
-        <a href='https://www.facebook.com/MadameButterflySushiBar/' className='transition-all duration-500 hover:scale-125'>
-          <img src={FACEBOOK} alt="Facebook" />
+        <a href='https://www.facebook.com/MadameButterflySushiBar/'>
+          <UseAnimations animation={facebook} size={40} />
         </a>
       </div>
     </div>
