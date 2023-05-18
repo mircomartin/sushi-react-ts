@@ -39,10 +39,10 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
       </ul>
       <div className="flex gap-4 center mt-10">
         <a href='https://www.instagram.com/madame.butterfly.sushi/'>
-          <UseAnimations animation={instagram} size={40} />
+          <UseAnimations animation={instagram} size={34} />
         </a>
         <a href='https://www.facebook.com/MadameButterflySushiBar/'>
-          <UseAnimations animation={facebook} size={40} />
+          <UseAnimations animation={facebook} size={34} />
         </a>
       </div>
     </div>

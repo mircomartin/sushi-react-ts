@@ -19,10 +19,10 @@ export const Footer = () => {
           </div>
           <div className='flex gap-4 justify-end'>
             <a href='https://www.instagram.com/madame.butterfly.sushi/'>
-              <UseAnimations animation={instagram} size={40} strokeColor='white' />
+              <UseAnimations animation={instagram} size={34} strokeColor='white' />
             </a>
             <a href='https://www.facebook.com/MadameButterflySushiBar/'>
-              <UseAnimations animation={facebook} size={40} strokeColor='white' />
+              <UseAnimations animation={facebook} size={34} strokeColor='white' />
             </a>
           </div>
         </div>

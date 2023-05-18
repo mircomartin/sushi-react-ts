@@ -28,7 +28,7 @@ export const Card = ({ product }: { product: ICard }) => {
             <img src={product.image} alt={product.title} className='min-h-[300px] max-h-[300px] object-cover w-full transition duration-300 ease-in-out hover:scale-105' />
           </figure>
           <div className='p-4 flex flex-col gap-3'>
-            <h3 className='text-2xl font-bold uppercase text-[#0C0F1F ]'>{product.title}</h3>
+            <h3 className='text-2xl font-bold uppercase text-[#0C0F1F]'>{product.title}</h3>
             <div className='w-full flex flex-col gap-5'>
               <div ref={heightInfoCard} className={`text-[#333] w-full overflow-hidden min-h-[75px] ${verMas ? 'max-h-[auto]' : 'max-h-[150px]'}`}>
                 {ReactHtmlParser(product.description)}
