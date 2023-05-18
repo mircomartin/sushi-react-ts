@@ -112,6 +112,11 @@ header.opened {
   }
 }
 
+.swiper-button-next, 
+.swiper-button-prev {
+  color:#B6262F;
+}
+
 .testimonials .testimomonialsItem:before {
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
   background: none repeat scroll 0 0 #D13E2A; /* color esquina */
