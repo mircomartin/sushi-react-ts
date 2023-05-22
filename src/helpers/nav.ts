@@ -9,7 +9,7 @@ export const nav: INav[] = [
   {
     id: 1,
     text: 'MENÚ',
-    url: null,
+    url: '#',
     submenu: [
       {
         id: 1,
@@ -31,7 +31,7 @@ export const nav: INav[] = [
   {
     id: 3,
     text: 'Cartas',
-    url: null,
+    url: '#',
     submenu: [
       {
         id: 1,
