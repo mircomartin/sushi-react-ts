@@ -21,7 +21,7 @@ export const Promos = () => {
         <div className='w-full flex overflow-x-auto flex-nowrap md:grid md:grid-cols-3 gap-7 md:gap-12'>
         {
           promos?.map((promo) => (
-            <article key={promo.id}>
+            <article key={promo.id} className='w-[300px] md:w-auto flex-shrink-0 md:flex-[unset] overflow-hidden'>
               <Card product={promo}/>
             </article>
           ))

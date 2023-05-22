@@ -6,7 +6,7 @@ import LOGO from './../../assets/logo.png'
 
 export const Footer = () => {
   return (
-    <footer className='bg-[#080808] py-5 px-2 md:py-10'>
+    <footer className='bg-[#080808] py-10 px-2'>
       <div className='container'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10'>
           <Link to='/' className='flex'>

@@ -18,11 +18,11 @@ export const Card = ({ product }: { product: ICard }) => {
         })
       }
     }
-  }, [])
+  }, [heightInfoCard])
   
   return (
     <AnimationOnScroll animateIn='animate__fadeIn' animateOnce={true} animatePreScroll={true}>
-      <div className={`${path === '/' && 'min-h-[625px] md:min-h-[595px]'} w-[300px] bg-white hover:bg-[#fbfbfbf5] hover:shadow-md transition duration-300 ease-in-out md:w-auto flex-shrink-0 flex-grow-[290px] md:flex-[unset] overflow-hidden`}>
+      <div className={`${(path === '/' || path === '/sobre-nosotros') && 'min-h-[625px] md:min-h-[595px]'} bg-white hover:bg-[#fbfbfbf5] hover:shadow-md transition duration-300 ease-in-out`}>
         <div className='flex flex-col'>
           <figure className='overflow-hidden'>
             <img src={product.image} alt={product.title} className='min-h-[300px] max-h-[300px] object-cover w-full transition duration-300 ease-in-out hover:scale-105' />

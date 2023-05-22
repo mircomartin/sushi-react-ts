@@ -3,14 +3,14 @@ import UseAnimations from 'react-useanimations'
 import instagram from 'react-useanimations/lib/instagram'
 import facebook from 'react-useanimations/lib/facebook'
 import { SubMenuMobile } from './SubMenuMobile'
-import { nav } from '../../helpers/nav'
+import { type INav } from '../../interfaces/interfaces'
 
 interface MenuMobileProps {
   openMenu: boolean
-  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>
+  nav: INav[]
 }
 
-export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
+export const MenuMobile = ({ nav, openMenu }: MenuMobileProps) => {
 
   if (openMenu) {
     document.querySelector('body')?.classList.add('overflow-hidden')
@@ -20,24 +20,26 @@ export const MenuMobile = ({ openMenu, setOpenMenu }: MenuMobileProps) => {
 
   return (
     <div
-      className={`${openMenu ? 'visible right-0 translate-x-0' : 'invisible translate-x-full'} transition-all duration-500 fixed w-full z-50 h-screen top-[56px] bg-white p-5 overflow-hidden md:hidden`}
+      className={`${openMenu ? 'visible translate-x-0 right-0' : 'invisible translate-x-full -right-full'} transition-all duration-500 fixed z-50 h-screen top-[56px] bg-white p-5 overflow-hidden md:hidden`}
     >
-      <ul className="flex flex-col gap-5">
+      <ul className='flex flex-col gap-3'>
         {
           nav.map((item) => 
             item.submenu !== undefined
               ? 
-              <SubMenuMobile key={item.id} item={item} setOpenMenu={setOpenMenu} openMenu={openMenu} />
+              <SubMenuMobile key={item.id} item={item} />
               : 
               item.url !== null 
               &&
-                <NavLink key={item.id} to={ item.url} className="font-semibold uppercase" onClick={() => setOpenMenu(!openMenu)}>
-                  {item.text}
-                </NavLink>
+                <li key={item.id} className='border-b-[1px] border-black pb-3'>
+                  <NavLink  to={ item.url} className='font-semibold uppercase'>
+                    {item.text}
+                  </NavLink>
+                </li>
           )
         }
       </ul>
-      <div className="flex gap-4 center mt-10">
+      <div className='flex gap-4 center mt-10'>
         <a href='https://www.instagram.com/madame.butterfly.sushi/'>
           <UseAnimations animation={instagram} size={34} />
         </a>

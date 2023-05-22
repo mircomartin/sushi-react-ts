@@ -1,9 +1,7 @@
 import { Helmet } from 'react-helmet'
 import { useSushiMenu } from '../hooks/useSushiMenu'
 import { TitleSection } from '../components/sections'
-import { Card } from '../components/ui/Card'
-import { Loading } from '../components/ui/Loading'
-import { Pagination } from '../components/ui/Pagination'
+import { Card, Loading, Pagination } from '../components/ui/'
 
 export const MenuSushi = () => {
   const { error, loading, menuMapped, currentPage, setCurrentPage, totalPages } = useSushiMenu()
@@ -22,11 +20,11 @@ export const MenuSushi = () => {
       <div 
         className='min-h-screen w-full flex flex-col justify-between'
         style={{
-          background: 'linear-gradient(173deg, rgba(255,255,255,1) 35%, rgba(17,20,36,1) 50%, rgba(2,6,23,1) 60%)'
+          background: 'linear-gradient(173deg, rgb(255, 255, 255) 10%, rgb(17, 20, 36) 60%, rgb(2, 6, 23) 70%)'
         }}
       >
         <section className='container py-12 md:py-36'>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-7 md:gap-12 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-7 md:gap-12 justify-items-center px-5 md:px-[unset]">
             {
               menuMapped.map((menu) => (
                 <article key={menu.id}>

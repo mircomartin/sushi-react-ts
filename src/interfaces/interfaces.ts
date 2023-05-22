@@ -1,6 +1,6 @@
 export interface INav {
   id: number
-  url: string | null
+  url: string
   text: string
   submenu?: Submenu[]
 }

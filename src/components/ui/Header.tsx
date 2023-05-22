@@ -1,22 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import UseAnimations from 'react-useanimations'
 import instagram from 'react-useanimations/lib/instagram'
 import facebook from 'react-useanimations/lib/facebook'
 import menu3 from 'react-useanimations/lib/menu3'
-import { useStickyHeader } from '../../hooks/useStickyHeader'
-import { MenuMobile } from './MenuMobile'
+import { useNavs } from '../../hooks/useNavs'
+import { MenuMobile } from './'
 import { ArrowDown } from './icons'
-import { nav } from '../../helpers/nav'
 import LOGO from './../../assets/logo.png'
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
-  const { header } = useStickyHeader()
+  const { error, loading, nav, header } = useNavs()
+
+  useEffect(() => {
+    
+  }, [openMenu])
+  
+  if (!loading && error !== null) return <p>{error}</p>
+
   return (
     <header className={`bg-slate-950 py-2 px-2 md:py-4 animated ${openMenu ? 'opened sticky-custom' : 'bg-slate-950'}`} ref={header}>
 
-      <MenuMobile openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <MenuMobile nav={nav} openMenu={openMenu} />
 
       <div className='container flex items-center justify-between'>
         <Link to='/' className='flex flex-1'>
@@ -52,8 +58,8 @@ export const Header = () => {
         }
         </nav>
         <div className='md:flex-1'>
-          <button className='flex justify-end md:hidden'>
-            <UseAnimations onClick={() => setOpenMenu(!openMenu)} animation={menu3} size={40} strokeColor='white' />
+          <button className='flex justify-end md:hidden' onClick={() => setOpenMenu(!openMenu)}>
+            <UseAnimations animation={menu3} size={40} strokeColor='white' />
           </button>
           <section className='hidden md:flex gap-4 justify-end'>
             <a href='https://www.instagram.com/madame.butterfly.sushi/'>

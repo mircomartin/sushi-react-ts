@@ -2,7 +2,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { Helmet } from 'react-helmet'
 import { useStaticPage } from '../hooks/useStaticPage'
 import { Promos, TitleSection } from '../components/sections'
-import { Loading } from '../components/ui/Loading'
+import { Loading } from '../components/ui/'
 import IMG from '../assets/sobre-nosotros.jpeg'
 
 export const SobreNosotros = () => {

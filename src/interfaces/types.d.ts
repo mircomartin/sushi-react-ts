@@ -287,3 +287,45 @@ export interface WP_Post {
     image: string
   }
 }
+
+export interface WP_NavMenu {
+  ID: number
+  post_author: string
+  post_date: string
+  post_date_gmt: string
+  post_content: string
+  post_title: string
+  post_excerpt: string
+  post_status: 'publish'
+  comment_status: 'open' | 'closed'
+  ping_status: 'open' | 'closed'
+  post_password: string
+  post_name: string
+  to_ping: string
+  pinged: string
+  post_modified: string
+  post_modified_gmt: string
+  post_content_filtered: string
+  post_parent: number
+  guid: string
+  menu_order: number
+  post_type: 'nav_menu_item'
+  post_mime_type: string
+  comment_count: string
+  filter: 'raw'
+  db_id: number
+  menu_item_parent: string
+  object_id: string
+  object: 'page'
+  type: 'post_type'
+  type_label: 'Página'
+  url: string
+  title: string
+  target: string
+  attr_title: string
+  description: string
+  classes: string[]
+  xfn: string
+  slug: string
+  child_items?: MenuItem[]
+}
