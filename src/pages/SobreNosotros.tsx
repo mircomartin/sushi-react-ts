@@ -5,7 +5,7 @@ import { Promos, TitleSection } from '../components/sections'
 import { Loading } from '../components/ui/'
 import IMG from '../assets/sobre-nosotros.jpeg'
 
-export const SobreNosotros = () => {
+const SobreNosotros = () => {
 
   const { error, loading, pageSelected } = useStaticPage('sobre-nosotros')
 
@@ -37,3 +37,4 @@ export const SobreNosotros = () => {
     </>
   )
 }
+export default SobreNosotros

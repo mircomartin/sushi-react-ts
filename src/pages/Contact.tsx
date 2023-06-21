@@ -4,7 +4,7 @@ import { useStaticPage } from '../hooks/useStaticPage'
 import { FormContact, TitleSection } from '../components/sections'
 import { Loading } from '../components/ui/'
 
-export const Contact = () => {
+const Contact = () => {
 
   const { error, loading, pageSelected } = useStaticPage('contacto')
 
@@ -35,3 +35,4 @@ export const Contact = () => {
     </>
   )
 }
+export default Contact

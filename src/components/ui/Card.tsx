@@ -30,7 +30,7 @@ export const Card = ({ product }: { product: ICard }) => {
           <div className='p-4 flex flex-col gap-3'>
             <h3 className='text-2xl font-bold uppercase text-[#0C0F1F]'>{product.title}</h3>
             <div className='w-full flex flex-col gap-5'>
-              <div ref={heightInfoCard} className={`text-[#333] w-full overflow-hidden min-h-[75px] ${verMas ? 'max-h-[auto]' : 'max-h-[150px]'}`}>
+              <div ref={heightInfoCard} className={`text-[#333] w-full overflow-hidden min-h-[75px] transition-[all] duration-500 ease-in-out ${verMas ? 'max-h-[500px]' : 'max-h-[150px]'}`}>
                 {ReactHtmlParser(product.description)}
               </div>
               <div className='flex justify-between items-center'>

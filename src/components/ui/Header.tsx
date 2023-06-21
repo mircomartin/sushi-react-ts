@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import UseAnimations from 'react-useanimations'
 import instagram from 'react-useanimations/lib/instagram'
@@ -13,10 +13,6 @@ export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const { error, loading, nav, header } = useNavs()
 
-  useEffect(() => {
-    
-  }, [openMenu])
-  
   if (!loading && error !== null) return <p>{error}</p>
 
   return (

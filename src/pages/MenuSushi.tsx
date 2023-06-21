@@ -3,7 +3,7 @@ import { useSushiMenu } from '../hooks/useSushiMenu'
 import { TitleSection } from '../components/sections'
 import { Card, Loading, Pagination } from '../components/ui/'
 
-export const MenuSushi = () => {
+const MenuSushi = () => {
   const { error, loading, menuMapped, currentPage, setCurrentPage, totalPages } = useSushiMenu()
 
   if (loading) return <Loading />
@@ -41,3 +41,4 @@ export const MenuSushi = () => {
     </>
   )
 }
+export default MenuSushi

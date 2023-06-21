@@ -1,5 +1,6 @@
 import React from 'react'
 
-export const MenuVinos = () => {
+const MenuVinos = () => {
   return <div>MenuVinos</div>
 }
+export default MenuVinos

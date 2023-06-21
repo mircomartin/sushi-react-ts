@@ -15,7 +15,7 @@ export const useSushiMenu = () => {
     try {
       const { data, totalPages } = await getMenuSushiFromApi({ currentPage })
       setTotalPages(Number(totalPages))
-      setMenus(data)
+      setMenus([...menus, ...data])
     } catch (error: any) {
       setError(error.message)
     } finally {
