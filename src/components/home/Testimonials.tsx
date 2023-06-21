@@ -9,11 +9,11 @@ export const Testimonials = () => {
   const { error, loading, testimonials } = useTestimonials()
 
   if (loading) return <Loading />
-  if (!loading && error !== null) return <p className="text-center text-white bg-red-400">{error}</p>
+  if (!loading && error !== null) return <p className='text-center text-white bg-red-400'>{error}</p>
   
   return (
-    <div className="bg-slate-950 py-12 md:py-36 testimonials relative">
-      <div className="container px-5 md:px-0">
+    <div className='bg-slate-950 py-12 md:py-36 testimonials relative'>
+      <div className='container px-5 md:px-0'>
         <Swiper
           className='static'
           breakpoints={{
@@ -44,13 +44,13 @@ export const Testimonials = () => {
           {
             testimonials?.map((slide) => (
               <SwiperSlide key={slide.id}>
-                <div className="testimomonialsItem flex flex-col gap-5 justify-between bg-white p-10">
-                  <div className="min-h-[250px]">
+                <div className='testimomonialsItem flex flex-col gap-5 justify-between bg-white p-10'>
+                  <div className='min-h-[250px]'>
                     {ReactHtmlParser(slide.comment)}
                   </div>
                   <div>
-                    <span className="font-bold uppercase">{slide.author}</span>
-                    <p className="flex gap-1 mt-3"><Star /><Star /><Star /><Star /><Star /></p>
+                    <span className='font-bold uppercase'>{slide.author}</span>
+                    <p className='flex gap-1 mt-3'><Star /><Star /><Star /><Star /><Star /></p>
                   </div>
                 </div>
               </SwiperSlide>

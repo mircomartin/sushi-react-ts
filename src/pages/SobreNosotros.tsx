@@ -29,7 +29,7 @@ const SobreNosotros = () => {
             </div>
           </div>
           <figure className='overflow-hidden'>
-            <img src={IMG} alt="Sobre Nosotros" className='object-cover object-center w-full h-auto'/>
+            <img src={IMG} alt='Sobre Nosotros' className='object-cover object-center w-full h-auto'/>
           </figure>
         </div>
       </div>

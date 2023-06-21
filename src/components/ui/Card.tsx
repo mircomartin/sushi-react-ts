@@ -35,7 +35,7 @@ export const Card = ({ product }: { product: ICard }) => {
               </div>
               <div className='flex justify-between items-center'>
                 <span className='text-xl uppercase font-semibold text-[#D13E2A]'>{product.price}</span>
-                <button id="buttonShow" onClick={() => setVerMas(!verMas)} className='hidden text-[#0C0F1F] font-semibold p-3 uppercase hover:bg-slate-300 transition duration-300 ease-in-out'>
+                <button id='buttonShow' onClick={() => setVerMas(!verMas)} className='hidden text-[#0C0F1F] font-semibold p-3 uppercase hover:bg-slate-300 transition duration-300 ease-in-out'>
                   {
                     verMas ? 'Ver menos' : 'Ver más'
                   }

@@ -24,7 +24,7 @@ const MenuSushi = () => {
         }}
       >
         <section className='container py-12 md:py-36'>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-7 md:gap-12 justify-items-center px-5 md:px-[unset]">
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-7 md:gap-12 justify-items-center px-5 md:px-[unset]'>
             {
               menuMapped.map((menu) => (
                 <article key={menu.id}>
